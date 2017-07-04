@@ -11,5 +11,3 @@ done
 echo "Server launched"
 
 python get_events.py
-
-shutdown -h now

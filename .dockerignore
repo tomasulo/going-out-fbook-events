@@ -1,0 +1,6 @@
+env.list
+.gitignore
+.git
+docker_cmds.txt
+package.json
+todo.md
