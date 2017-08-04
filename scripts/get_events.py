@@ -45,6 +45,9 @@ with table.batch_writer(overwrite_by_pkeys=['id', 'startTime']) as batch:
         until = int(Delorean(stop.end_of_day).epoch)
 
         for city in cities:
+
+            print("Searching events for " + city["name"])
+
             for lat, lng in city["coordinates"]:
 
                 payload = {"lat": lat, "lng": lng, "distance": "2000",
