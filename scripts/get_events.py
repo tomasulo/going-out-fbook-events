@@ -86,10 +86,16 @@ with table.batch_writer(overwrite_by_pkeys=['id', 'startTime']) as batch:
                         if "zip" in location:
                             zip = location["zip"]
 
+                        if "city" in location:
+                            venueCity = location["city"]
+                        else:
+                            venueCity = city
+
                         venue = {
                             'name': event["venue"]["name"],
                             'zip': zip,
-                            'street': street
+                            'street': street,
+                            'city': venueCity
                         }
 
                         batch.put_item(
