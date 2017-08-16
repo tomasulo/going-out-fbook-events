@@ -40,7 +40,7 @@ dynamodb = boto3.resource(
 table = dynamodb.Table('events')
 
 with table.batch_writer(overwrite_by_pkeys=['id', 'startTime']) as batch:
-    for stop in stops(freq=delorean.DAILY, count=7):
+    for stop in stops(freq=delorean.DAILY, count=10):
         since = int(Delorean(stop.start_of_day).epoch)
         until = int(Delorean(stop.end_of_day).epoch)
 
