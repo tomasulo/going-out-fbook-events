@@ -92,7 +92,7 @@ with table.batch_writer(overwrite_by_pkeys=['id', 'startTime']) as batch:
                         if "city" in location:
                             venueCity = location["city"]
                         else:
-                            venueCity = city
+                            venueCity = city["name"]
 
                         venue = {
                             'name': event["venue"]["name"],
